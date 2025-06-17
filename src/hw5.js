@@ -327,7 +327,11 @@ instructionsElement.style.fontFamily = 'Arial, sans-serif';
 instructionsElement.style.textAlign = 'left';
 instructionsElement.innerHTML = `
   <h3>Controls:</h3>
-  <p>O - Toggle orbit camera</p>
+  <p>Arrow Keys - Move Ball</p>
+  <p>W/S - Adjust Power</p>
+  <p>Space - Shoot</p>
+  <p>R - Reset</p>
+  <p>O - Toggle Camera</p>
 `;
 document.body.appendChild(instructionsElement);
 
