@@ -26,6 +26,8 @@ function degrees_to_radians(degrees) {
   return degrees * (pi/180);
 }
 
+let shotPower = 50
+
 // Create basketball court
 function createBasketballCourt() {
   const textureLoader = new THREE.TextureLoader();
@@ -161,7 +163,7 @@ function addHoop(side = 1) {
   const supportPoleRadius = 0.08;
   const supportArmLength = 1.2;
   const baselineX = side * (courtLength / 2);
-  const backboardFaceX = baselineX - 0.8 * side;
+  const backboardFaceX = baselineX - 1.1 * side;
   const backboardCenterX = backboardFaceX - side * (backboardThickness / 2);
 
   // Backboard
@@ -322,15 +324,20 @@ instructionsElement.style.color = 'white';
 instructionsElement.style.fontSize = '16px';
 instructionsElement.style.fontFamily = 'Arial, sans-serif';
 instructionsElement.style.textAlign = 'left';
-instructionsElement.innerHTML = `
-  <h3>Controls:</h3>
+instructionsElement.innerHTML = `  <h3>Controls:</h3>
   <p>Arrow Keys - Move Ball</p>
   <p>W/S - Adjust Power</p>
   <p>Space - Shoot</p>
   <p>R - Reset</p>
   <p>O - Toggle Camera</p>
+
 `;
 document.body.appendChild(instructionsElement);
+
+const powerContainer = document.createElement('div');
+powerContainer.id = 'power-container';
+powerContainer.innerText = `Shot Power: ${shotPower}%`;
+document.body.appendChild(powerContainer);
 
 // Handle key events
 function handleKeyDown(e) {
