@@ -161,11 +161,8 @@ function addHoop(side = 1) {
   const supportPoleRadius = 0.08;
   const supportArmLength = 1.2;
   const baselineX = side * (courtLength / 2);
-
-  // The face of the backboard sits at the baseline
-  const backboardFaceX = baselineX + side * (backboardThickness / 2);
-  // The center of the backboard
-  const backboardCenterX = backboardFaceX + side * (backboardThickness / 2);
+  const backboardFaceX = baselineX - 0.8 * side;
+  const backboardCenterX = backboardFaceX - side * (backboardThickness / 2);
 
   // Backboard
   // Backboard must be rectangular, white, and partially transparent
